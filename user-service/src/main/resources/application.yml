@@ -3,9 +3,9 @@ spring:
     config:
       enabled: false
   application:
-    name: PRODUCT-SERVICE
+    name: USER-SERVICE
   datasource:
-    url: jdbc:h2:mem:productdb
+    url: jdbc:h2:mem:userdb
     driverClassName: org.h2.Driver
     username: admin
     password: admin
@@ -18,4 +18,4 @@ eureka:
     enabled: false
 
 server:
-  port: 9091
+  port: 9092

@@ -27,7 +27,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ProductEntity findById(@PathVariable Long id){
-        log.info("findAll product");
+        log.info("findByProductId");
         return this.productService.findById(id);
     }
 }
