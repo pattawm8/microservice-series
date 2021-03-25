@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+  application:
+    name: SHOPPING-CART-SERVICE
+eureka:
+  client:
+    enabled: false
+
+server:
+  port: 9093
