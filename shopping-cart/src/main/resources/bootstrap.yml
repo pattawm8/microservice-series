@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: SHOPPING-CART-SERVICE
+  cloud:
+    config:
+      uri: ${SPRING_CLOUD_CONFIG_URL:http://localhost:9000}
+
+server:
+  port: 9093
