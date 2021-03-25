@@ -1,0 +1,9 @@
+eureka:
+  instance:
+    preferIpAddress: true
+    ip-address: ${HOST_NAME:localhost}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
