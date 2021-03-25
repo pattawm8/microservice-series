@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: CONFIG-SERVER
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///D:/Exp/microservice-series/configs
+#        git:
+#          uri: https://github.com/pattawm8/microservice-series
+#          search-paths: configs
+
+server:
+  port: 9000
