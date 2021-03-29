@@ -26,9 +26,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	http.cors().and().csrf().disable()
-            .authorizeRequests().anyRequest().authenticated()
-            .and().sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.NEVER);
+            .authorizeRequests()
+                .antMatchers("/h2-console/**").permitAll()
+                .anyRequest().authenticated()
+                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
+
+        http.headers().frameOptions().disable();
     }
     @Override
     public void configure(WebSecurity web) {
