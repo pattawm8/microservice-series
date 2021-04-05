@@ -7,3 +7,7 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+
+spring:
+  zipkin:
+    base-url: ${ZIPKIN_URL:http://192.168.99.105:9411/}
