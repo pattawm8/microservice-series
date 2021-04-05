@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 
 @AllArgsConstructor
@@ -43,9 +45,18 @@ public abstract class AbstractRemoteService {
         if(headers == null) {
             headers = new HttpHeaders();
         }
+
+        String token = this.getBearerTokenHeader();
+        log.info("token : {}",token);
+        headers.add("Authorization", token);
+
         if(contentType != null) {
             headers.setContentType(contentType);
         }
         return new HttpEntity<>(parameter, headers);
+    }
+
+    private String getBearerTokenHeader() {
+        return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getHeader("Authorization");
     }
 }
